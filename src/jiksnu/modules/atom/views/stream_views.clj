@@ -1,16 +1,14 @@
 (ns jiksnu.modules.atom.views.stream-views
-  (:use [ciste.config :only [config]]
-        [ciste.core :only [with-format]]
-        [ciste.views :only [apply-view defview]]
-        [ciste.sections.default :only [full-uri index-line index-section show-section]]
-        [clj-stacktrace.repl :only [pst+]]
-        jiksnu.actions.stream-actions
-        [jiksnu.ko :only [*dynamic*]]
-        [jiksnu.session :only [current-user]])
-  (:require [clojure.tools.logging :as log]
+  (:require [ciste.config :refer [config]]
+            [ciste.core :refer [with-format]]
+            [ciste.views :refer [apply-view defview]]
+            [ciste.sections.default :refer [full-uri index-line index-section show-section]]
+            [clojure.tools.logging :as log]
             [jiksnu.actions.activity-actions :as actions.activity]
+            jiksnu.actions.stream-actions
             [jiksnu.model :as model]
-            [jiksnu.namespace :as ns]))
+            [jiksnu.namespace :as ns]
+            [jiksnu.session :refer [current-user]]))
 
 (defview #'mentions-timeline :atom
   [request activities]
