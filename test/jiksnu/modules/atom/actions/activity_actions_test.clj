@@ -1,4 +1,4 @@
-(ns jiksnu.actions.activity-actions-test
+(ns jiksnu.modules.atom.actions.activity-actions-test
   (:require [ciste.core :refer [with-context]]
             [ciste.sections.default :refer [show-section]]
             [clj-factory.core :refer [factory fseq]]

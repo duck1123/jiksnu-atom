@@ -1,11 +1,11 @@
-(ns jiksnu.actions.salmon-actions-test
+(ns jiksnu.modules.atom.actions.salmon-actions-test
   (:require [clj-factory.core :refer [factory]]
             [clojure.java.io :as io]
             [clojure.tools.logging :as log]
             [jiksnu.model :as model]
             [jiksnu.actions.activity-actions :as actions.activity]
             [jiksnu.actions.key-actions :as actions.key]
-            [jiksnu.actions.salmon-actions :as actions.salmon]
+            [jiksnu.modules.atom.actions.salmon-actions :as actions.salmon]
             [jiksnu.actions.user-actions :as actions.user]
             [jiksnu.mock :as mock]
             [jiksnu.model.activity :as model.activity]

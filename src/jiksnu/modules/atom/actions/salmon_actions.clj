@@ -1,4 +1,4 @@
-(ns jiksnu.actions.salmon-actions
+(ns jiksnu.modules.atom.actions.salmon-actions
   (:require [ciste.config :refer [config]]
             [ciste.core :refer [defaction]]
             [ciste.model :as cm]
