@@ -19,19 +19,19 @@
 
 (test-environment-fixture
  (future-context #'callback-publish
-                 (context "when there is a watched source"
-                   (with-context [:http :atom]
-                     (let [user (mock/a-user-exists)
-                           source (mock/a-feed-source-exists)
-                           activity (factory :activity {:id (fseq :uri)})
-                           feed (abdera/make-feed* {:links
-                                                    [{:rel "self"
-                                                      :href (:topic source)}]
-                                                    :entries (index-section [activity])})]
-                       (actions.feed-source/add-watcher source user)
-                       activity => (partial instance? Activity)
-                       (callback-publish feed)
-                       (model.activity/fetch-by-remote-id (:id activity)) => truthy))))
+   (context "when there is a watched source"
+     (with-context [:http :atom]
+       (let [user (mock/a-user-exists)
+             source (mock/a-feed-source-exists)
+             activity (factory :activity {:id (fseq :uri)})
+             feed (abdera/make-feed* {:links
+                                      [{:rel "self"
+                                        :href (:topic source)}]
+                                      :entries (index-section [activity])})]
+         (actions.feed-source/add-watcher source user)
+         activity => (partial instance? Activity)
+         (callback-publish feed)
+         (model.activity/fetch-by-remote-id (:id activity)) => truthy))))
 
 
  )
